@@ -45,7 +45,9 @@ const Admissions = () => {
     setError('');
     setSuccess(false);
     try {
-      const res = await fetch('http://localhost:8080/api/admissions/register', {
+      const res = await fetch('// frontend API call example
+fetch("https://your-railway-app-name.up.railway.app/api/admissions/register")
+', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),
