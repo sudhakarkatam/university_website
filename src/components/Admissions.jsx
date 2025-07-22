@@ -40,25 +40,29 @@ const Admissions = () => {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-    setError('');
-    setSuccess(false);
-    try {
-      const res = await fetch('// frontend API call example
-fetch("https://your-railway-app-name.up.railway.app/api/admissions/register", {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
-      });
-      if (!res.ok) throw new Error('Failed to register');
-      setSuccess(true);
-      setForm({ ...initialForm, programme: '', course: '' });
-    } catch (err) {
-      setError('Registration failed. Please try again.');
-    }
-    setLoading(false);
-  };
+  e.preventDefault();
+  setLoading(true);
+  setError('');
+  setSuccess(false);
+  
+  try {
+    const res = await fetch("https://your-railway-app-name.up.railway.app/api/admissions/register", {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(form),
+    });
+
+    if (!res.ok) throw new Error('Failed to register');
+
+    setSuccess(true);
+    setForm({ ...initialForm, programme: '', course: '' });
+  } catch (err) {
+    setError('Registration failed. Please try again.');
+  }
+
+  setLoading(false);
+};
+
 
   return (
     <section id="admissions" className="admissions-section" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
