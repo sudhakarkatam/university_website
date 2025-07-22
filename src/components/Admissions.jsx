@@ -44,9 +44,9 @@ const Admissions = () => {
   setLoading(true);
   setError('');
   setSuccess(false);
-  
+
   try {
-    const res = await fetch("https://your-railway-app-name.up.railway.app/api/admissions/register", {
+    const res = await fetch("https://university-backend-production-2bed.up.railway.app/api/admissions/register", {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(form),
@@ -62,6 +62,7 @@ const Admissions = () => {
 
   setLoading(false);
 };
+
 
 
   return (
